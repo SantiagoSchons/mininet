@@ -1,15 +1,19 @@
-# mininet-debian
+mininet-debian
+Mininet 2.3.0 – Instalação compatível com Debian 12 (modo CLI)
+Este repositório contém uma versão levemente modificada do Mininet 2.3.0, com pequenas alterações nos arquivos Makefile e install.sh para corrigir problemas de instalação e compatibilidade ao rodar em ambientes mais recentes.
 
-Mininet 2.3.0 - Instalação com ajustes de compatibilidade
-Este repositório contém uma versão levemente modificada do Mininet 2.3.0, com pequenas alterações nos arquivos Makefile e install.sh para resolver problemas de instalação e compatibilidade em ambientes mais recentes.
+🔍 Observações importantes:
 
-Objetivo: Facilitar o deploy do Mininet 2.3.0 em sistemas modernos, mantendo a base original do projeto.
+Testado exclusivamente no Debian 12.
+
+Funciona apenas no modo CLI (interface de linha de comando) — a interface gráfica (GUI) não funciona com essa configuração.
+
+A base original do projeto foi mantida, com foco apenas na correção de erros para viabilizar o uso básico.
 
 Principais mudanças:
 
-Ajustes no Makefile para corrigir erros durante a compilação.
+Ajustes no Makefile para corrigir erros de compilação.
 
-Modificações no script install.sh para lidar com dependências ausentes ou versões incompatíveis.
+Modificações no install.sh para tratar dependências ausentes ou versões incompatíveis.
 
-
-alterar branch.
+Nota: Caso esteja utilizando outra distribuição ou precise da GUI, esta versão não é recomendada.
