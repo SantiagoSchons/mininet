@@ -2,7 +2,7 @@ MININET = mininet/*.py
 TEST = mininet/test/*.py
 EXAMPLES = mininet/examples/*.py
 MN = bin/mn
-PYTHON ?= python
+PYTHON ?= python3
 PYMN = $(PYTHON) -B bin/mn
 BIN = $(MN)
 PYSRC = $(MININET) $(TEST) $(EXAMPLES) $(BIN)
@@ -18,8 +18,10 @@ CC ?= cc
 
 CFLAGS += -Wall -Wextra
 
-all: codecheck test
+	
 
+all: codecheck test
+	-echo "passou aqui"
 clean:
 	rm -rf build dist *.egg-info *.pyc $(MNEXEC) $(MANPAGES) $(DOCDIRS)
 
@@ -48,18 +50,18 @@ slowtest: $(MININET)
 
 mnexec: mnexec.c $(MN) mininet/net.py
 	$(CC) $(CFLAGS) $(LDFLAGS) -DVERSION=\"`PYTHONPATH=. $(PYMN) --version`\" $< -o $@
-
+	-echo "passou aqui 2"
 install-mnexec: $(MNEXEC)
 	install -D $(MNEXEC) $(BINDIR)/$(MNEXEC)
 
 install-manpages: $(MANPAGES)
 	install -D -t $(MANDIR) $(MANPAGES)
-
+	-echo "passou aqui 3"
 install: install-mnexec install-manpages
 #	This seems to work on all pip versions
-	$(PYTHON) -m pip uninstall -y mininet || true
-	$(PYTHON) -m pip install .
-
+	apt remove -y mininet || true
+#	$(PYTHON) -m pip install .
+	-echo "passou aqui 4"
 develop: $(MNEXEC) $(MANPAGES)
 # 	Perhaps we should link these as well
 	install $(MNEXEC) $(BINDIR)
