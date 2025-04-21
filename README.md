@@ -10,3 +10,6 @@ Principais mudanças:
 Ajustes no Makefile para corrigir erros durante a compilação.
 
 Modificações no script install.sh para lidar com dependências ausentes ou versões incompatíveis.
+
+
+alterar branch.
